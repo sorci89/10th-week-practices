@@ -47,6 +47,10 @@ select {
   border-radius: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .landingPage {
   position: relative;
   height: 100vh;
