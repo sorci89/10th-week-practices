@@ -3,28 +3,43 @@ import { Link } from "react-router-dom";
 import "./App.css";
 import Menu from "./components/Menu";
 import Pizza from "./components/Pizza";
-import landingPic from "./landing/picLanding.jpg";
 
-function landingBackgroundPic() {
-  return (
-    <img src={landingPic} alt="BackgroundPic" id="landingBackground"></img>
-  );
-}
+import Navbar from "./components/Navbar";
 
 const Homepage = () => {
   return (
     <div>
-      <div className="landing">
-        <div className="navBar">
-          <h1 className="navLogo">Logo</h1>
-          <h2 className="navTile">Homepage</h2>
-          <h2 className="navTile">Rólunk</h2>
-          <h2 className="navTile">Menü</h2>
+      <div className="landingPage">
+        <Navbar />
+        <div className="landingMiddleSection">
+          <h1 className="welcomeText">Üdvözöljük a</h1>
+          <h1 className="welcomeText">oldalán!</h1>
         </div>
-        <div className="landingBackground">{landingBackgroundPic()}</div>
-        <button>
-          <Link to="/bookatable">Book a table</Link>
-        </button>
+        <div className="btnDiv">
+          <button className="btn">
+            <span>
+              <Link to="/bookatable">Asztalfoglalás</Link>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div className="intro">
+        Szeretettel köszöntjük a Pizza Duo honlapján! Kérjük engedje meg, hogy
+        pár mondatban bemutatkozzunk Önnek! Üzletünk 2012 elején nyitott családi
+        vállalkozásként. Pizzériánk házhozszállítással foglalkozik, viszont a
+        személyes átvételre is van lehetőség a Csaló köz 2 szám alatt. (Volt
+        gyógyszertári központ.) Nagyon igyekszünk, hogy mindenki igényét ki
+        tudjuk elégíteni, ezért a választékot is úgy próbáljuk kialakítani, hogy
+        meglévő és leendő kedves vendégeink is biztosan megtalálják a számukra
+        legínycsiklandozóbb pizzát, spagettit, salátát, vagy éppen a városban
+        egyedülálló lepényt. Pizzáinkat vékony, közepes és vastag tésztával is
+        kérheti. Csak és kizárólag frissen dagasztott tésztával dolgozunk!!!
+        Nagyon fontos megemlíteni, hogy számunkra a minőség az első, ami igazán
+        baráti árakkal párosul. Vállaljuk iskola és családi rendezvények nagyobb
+        mennyiségű színvonalas teljesítését is! Ha felkeltettük érdeklődését,
+        látogasson el étlapunkra, ahol a teljes kínálatot megtekintheti, illetve
+        elérhetőségeinkről és aktuális akcióinkról is tájékozódhat. Ne feledje
+        velünk jól lakhat anélkül, hogy a pénztárcája lefogyna!
       </div>
       <Menu />
       <Pizza />
@@ -35,6 +50,7 @@ const Homepage = () => {
 const Bookingpage = () => {
   return (
     <div>
+      <Navbar />
       <h1>Booking Page</h1>
       <Link to="/">Back to homepage</Link>
     </div>

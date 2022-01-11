@@ -47,13 +47,24 @@ select {
   border-radius: 0;
 }
 
-.landing {
-  width: 100vw;
+.landingPage {
   height: 100vh;
+  width: 100vw;
+  background: url(landing/picLanding.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.landingMiddleSection {
+  width: 100vw;
+
+  text-align: center;
+  color: white;
 }
 
-#landingBackground {
-  width: 100%;
+.navBar {
+  width: 100vw;
+  background-color: #333;
+  overflow: hidden;
 }
 
 .navLogo {
@@ -61,12 +72,7 @@ select {
   padding: 5px;
 }
 
-.navBar {
-  background-color: #333;
-  overflow: hidden;
-}
-
-h2 {
+.navTile {
   float: left;
   color: #f2f2f2;
   text-align: center;
@@ -83,4 +89,61 @@ h2 {
 .navTile.active {
   background-color: #04aa6d;
   color: white;
+}
+
+.btnDiv {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+
+  background-color: #333;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.btn {
+  display: block;
+  position: relative;
+  padding: 17px 50px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  outline: none;
+  background-color: #222;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #78c7d2;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.btn:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.intro {
+  width: 100vw;
+  height: 100vh;
 }
