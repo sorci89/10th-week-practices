@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 let isHomePage = true;
 
 const homePage = ()=> {
@@ -15,7 +17,17 @@ const homePage = ()=> {
 }
 */
 
+
 const App = () => {
+  //let isLandingPage = true;
+  
+  let [isLandingPage, setter] = useState(true);
+  
+  const toggleDisplay = () => {
+    setter(!isLandingPage)
+  }
+
+
   return (
     <div>
       Hello
@@ -26,6 +38,13 @@ const App = () => {
       }
       </div>
       <button onClick={homePage}>Click me!</button>
+      <div>{
+        isLandingPage ? 
+        <div>Home Page</div> : 
+        <div>Landing Page</div>
+      }
+      </div>
+      <button onClick={toggleDisplay}>Click me!</button>
       {/*<DivFunction />*/}
     </div>
   );
