@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
-import Menu from "./components/Menu";
-import Pizza from "./components/Pizza";
+import PizzaList from "./components/PizzaList";
+import BookingForm from "./components/Bookingform";
 
 import Navbar from "./components/Navbar";
 
@@ -41,8 +41,7 @@ const Homepage = () => {
         elérhetőségeinkről és aktuális akcióinkról is tájékozódhat. Ne feledje
         velünk jól lakhat anélkül, hogy a pénztárcája lefogyna!
       </div>
-      <Menu />
-      <Pizza />
+      <div className="menuSection">{<PizzaList />}</div>
     </div>
   );
 };
@@ -50,9 +49,11 @@ const Homepage = () => {
 const Bookingpage = () => {
   return (
     <div>
-      <Navbar />
       <h1>Booking Page</h1>
-      <Link to="/">Back to homepage</Link>
+      <Link to="/">
+        <button>Vissza a főoldalra</button>
+      </Link>
+      <BookingForm />
     </div>
   );
 };
