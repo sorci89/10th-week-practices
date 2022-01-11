@@ -1,11 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {Homepage, Bookingpage } from './App';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+    <Router>
+       <Routes>
+		      <Route exact path="/" element={<Homepage/>}></Route>
+				  <Route exact path="/bookatable" element={<Bookingpage/>}></Route>
+	    </Routes>
+    </Router>,
+    document.getElementById('root')
 );
