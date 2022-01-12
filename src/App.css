@@ -296,13 +296,6 @@ body {
   transform: rotateZ(4deg);
   box-shadow: 7px -8px 5px #aaaaaa;
 }
-/*}*/
-
-#introPicture1 {
-}
-
-#introPicture2 {
-}
-
-.intro {
+.introText p {
+  padding-top: 10px;
 }
