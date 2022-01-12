@@ -15,7 +15,7 @@ function PizzaList() {
           {Toppings}{" "}
         </p>
         <p className="pizzaPrice">
-          <span>Ára:</span> {e.price} Ft.
+          <span>Ár:</span> {e.price} Ft.
         </p>
       </div>
     );
