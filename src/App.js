@@ -14,6 +14,7 @@ const Homepage = () => {
         <Navbar />
         <div className="landingMiddleSection">
           <h1 className="welcomeText">Üdvözöljük a</h1>
+          <h1 className="welcomeText">Team 4 Pizzéria</h1>
           <h1 className="welcomeText">oldalán!</h1>
         </div>
         <div className="btnDiv">
@@ -34,11 +35,11 @@ const Homepage = () => {
 const Bookingpage = () => {
   return (
     <div>
-      <h1>Booking Page</h1>
+      <Navbar />
+      <BookingForm />
       <Link to="/">
         <button>Vissza a főoldalra</button>
       </Link>
-      <BookingForm />
     </div>
   );
 };
