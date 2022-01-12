@@ -1,5 +1,14 @@
 import React, {useState} from 'react';
 
+
+const date = new Date();
+let today;
+if (date.getMonth() < 9){
+  today = date.getFullYear()+'-0'+(date.getMonth()+1)+'-'+date.getDate();
+} else {
+  today = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+}  
+
 const BookingForm = () => {
 
   const [name, setName] = useState('');
@@ -8,15 +17,27 @@ const BookingForm = () => {
   const [hour, setHour] = useState('');
   const [number, setNumber] = useState('');
   const [formSubmitted, submitForm] = useState(false);
-  let today;
 
-  const getToday = () => {
-    today = new Date();
-    console.log(today.getFullYear()+'.'+(today.getMonth()+1)+'.'+today.getDate());
-    return today.getFullYear()+'.'+(today.getMonth()+1)+'.'+today.getDate();
+  
+  const HourOptions = (props) => {
+    const dateFromForm = props.condition;
+    let todayHour = new Date().getHours();
+
+    if (dateFromForm===today && todayHour>8){
+      return (
+        <select name="time" value={hour} onChange={e => setHour(e.target.value)} required>
+          { [...Array(23-todayHour)].map( (_,i) => <option key={i+todayHour+1} value={i+todayHour+1}>{i+todayHour+1}:00</option>) }
+        </select>
+      )  
+    } else {
+      return (
+        <select name="time" value={hour} onChange={e => setHour(e.target.value)} required>
+          { [...Array(14)].map( (_,i) => <option key={i} value={i+10}>{i+10}:00</option>) }
+      </select>
+        )
+    } 
   }
-
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Név: " + e.target.text.value + "; Email: " + e.target.email.value + "; Időpont: " + e.target.date.value + "; " + e.target.time.value + "; Személyek száma: " + e.target.number.value);
@@ -25,18 +46,19 @@ const BookingForm = () => {
 
   return (
     <div> {
-      !formSubmitted ? 
+      !formSubmitted ?
       <form className="bookingForm" onSubmit={handleSubmit}>
+        <h3>Ha asztalt szeretnél foglalni, kérünk tölts ki az alábbi űrlapot:</h3>
         <label>Neved:</label>
-        <input type="text" name="text" value={name} onChange={e => setName(e.target.value)} />
+        <input type="text" name="text" value={name} onChange={e => setName(e.target.value)} required/>
         <label>Email címed:</label>
-        <input type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} />
+        <input type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required/>
         <label>Melyik napra szeretnél foglalni?</label>
-        <input type="date" name ="date" min={getToday()} value={date} onChange={e => setDate(e.target.value)} />
-        <label>Mikor érkeztek?</label>
-        <input type="time" name="time" min="10:00" value={hour} onChange={e => setHour(e.target.value)} />
+        <input type="date" name ="date" min={today} value={date} onChange={e => setDate(e.target.value)} required/>
+        <label>Mikor érkeztek?</label><small>éttermünk minden nap délelőtt 10-től éjfélig van nyitva</small>
+          <HourOptions condition={date}/>
         <label>Hányan lesztek?</label>
-        <input type="number" name="number" min="1" max="10" value={number} onChange={e => setNumber(e.target.value)} />
+        <input type="number" name="number" min="1" max="10" value={number} onChange={e => setNumber(e.target.value)} required/>
         <input type="submit" value="Foglalási igény elküldése" />
       </form>
       :
@@ -45,7 +67,7 @@ const BookingForm = () => {
         <p>Név: {name}</p>
         <p>Email cím: {email}</p>
         <p>Személyek száma: {number}</p>
-        <p>Időpont: {date}, {hour} óra </p>
+        <p>Időpont: {date}, {hour}:00 óra </p>
         <h3>Szeretettel várunk éttermünkben!</h3>
       </div>
       }
