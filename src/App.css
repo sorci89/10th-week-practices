@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Road+Rage&display=swap");
 
 * {
   margin: 0;
@@ -53,6 +52,7 @@ select {
 body {
   overflow-x: hidden;
   font-family: "Fredericka the Great", cursive;
+  font-weight: bold;
 }
 
 /*Landing Page */
@@ -115,6 +115,7 @@ body {
   margin-right: 20px;
   padding: 5px 15px 5px 15px;
   border: 1px solid black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   float: left;
 }
 
@@ -244,7 +245,7 @@ body {
 
 .introText {
   margin-top: 60px;
-  padding: 20px;
+  padding: 20px 40px;
   grid-column: 1 /3;
   grid-row: 2 / 3;
   width: 90%;
@@ -282,8 +283,8 @@ body {
 
 /* Pizza Menu Section */
 .pizzaList {
-  margin-top: 50px;
   width: 100vw;
+  margin-top: 100px;
 }
 
 .pizzaBox {
@@ -294,7 +295,7 @@ body {
 
 @media screen and (max-width: 850px) {
   .pizzaList {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     padding: 0 35px 0 20px;
     display: flex;
     flex-direction: column;
@@ -320,7 +321,7 @@ body {
   }
 }
 
-.pizzaPrice p {
+.pizzaPrice {
   text-align: right;
 }
 .pizzaBox img {
