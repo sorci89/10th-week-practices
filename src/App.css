@@ -101,7 +101,7 @@ body {
 .navBar {
   position: fixed;
   z-index: 99;
-  padding: 15px 0;
+  padding: 5px 0;
   width: 100%;
 
   background-color: #c59148;
