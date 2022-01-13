@@ -8,15 +8,19 @@ function PizzaList() {
     });
     return (
       <div className="pizzaBox" key={e.id}>
-        <img src={e.picture} alt={e.name} />
-        <h1 className="pizzaName">{e.name}</h1>
-        <p className="pizzaDescription">
-          <span>Feltét:</span>
-          {Toppings}{" "}
-        </p>
-        <p className="pizzaPrice">
-          <span>Ár:</span> {e.price} Ft.
-        </p>
+        <div className="pizzaPictureDiv">
+          <img src={e.picture} alt={e.name} />
+        </div>
+        <div className="pizzaTextDiv">
+          <h1 className="pizzaName">{e.name}</h1>
+          <p className="pizzaDescription">
+            <span>Feltét:</span>
+            {Toppings}{" "}
+          </p>
+          <p className="pizzaPrice">
+            <span>Ár:</span> {e.price} Ft.
+          </p>
+        </div>
       </div>
     );
   });
