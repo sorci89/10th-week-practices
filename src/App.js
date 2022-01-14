@@ -10,7 +10,7 @@ import Intro from "./components/Intro";
 const Homepage = () => {
   return (
     <div>
-      <div className="landingPage">
+      <div className="landingPage" id="mainPage">
         <Navbar />
         <div className="landingMiddleSection">
           <h1 className="welcomeText">Üdvözöljük a</h1>
@@ -18,28 +18,34 @@ const Homepage = () => {
           <h1 className="welcomeText">oldalán!</h1>
         </div>
         <div className="btnDiv">
-          <button className="btn">
-            <span>
-              <Link to="/bookatable">Asztalfoglalás</Link>
-            </span>
-          </button>
+          <Link to="/bookatable">
+            <button className="btn">
+              <span>Asztalfoglalás</span>
+            </button>
+          </Link>
         </div>
       </div>
 
       <Intro />
-      <div className="menuSection">{<PizzaList />}</div>
+      <div className="menuSection" id="Menü">
+        {<PizzaList />}
+      </div>
     </div>
   );
 };
 
 const Bookingpage = () => {
   return (
-    <div>
+    <div className="formPageDiv">
       <Navbar />
-      <BookingForm />
-      <Link to="/">
-        <button>Vissza a főoldalra</button>
-      </Link>
+      <div className="bookingMiddleSection">
+        <BookingForm />
+        <Link to="/">
+          <button className="btn">
+            <span>Vissza a főoldalra</span>
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

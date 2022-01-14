@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 * {
   margin: 0;
@@ -53,6 +54,7 @@ body {
   overflow-x: hidden;
   font-family: "Fredericka the Great", cursive;
   font-weight: bold;
+  background-color: #fffaf0;
 }
 
 /*Landing Page */
@@ -98,6 +100,8 @@ body {
   }
 }
 
+/* Navbar */
+
 .navBar {
   position: fixed;
   z-index: 99;
@@ -106,7 +110,6 @@ body {
 
   background-color: #c59148;
   overflow: hidden;
-  cursor: pointer;
 }
 
 .navName {
@@ -117,6 +120,7 @@ body {
   border: 1px solid black;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   float: left;
+  cursor: pointer;
 }
 
 .navTile {
@@ -127,6 +131,7 @@ body {
   text-decoration: none;
   letter-spacing: 2px;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .navTile:hover {
@@ -136,6 +141,7 @@ body {
 }
 
 /* Button */
+
 .btnDiv {
   position: fixed;
   bottom: 0;
@@ -166,8 +172,7 @@ body {
   letter-spacing: 2px;
 }
 @media screen and (max-width: 320px) {
-  .btn {
-    padding: 17px 20px;
+  .btnDiv .btn {
     font-size: 15px;
   }
 }
@@ -194,20 +199,6 @@ body {
 .btn:hover:after {
   -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
-}
-
-.bookingForm {
-  width: 30%;
-  margin-left: auto;
-  margin-right: auto;
-  border: 3px solid #648b33;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-}
-
-.bookingForm input {
-  margin-bottom: 20px;
 }
 
 /* Intro Section */
@@ -336,4 +327,121 @@ body {
 
 .pizzaDescription span {
   display: block;
+}
+
+/* Booking Form */
+
+.formPageDiv {
+  width: 100vw;
+  height: 100vh;
+  background: url(landing/wp3603169.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 577px) {
+  .bookingMiddleSection {
+    margin: 50px auto 15px auto;
+    width: 90%;
+  }
+  .formDiv {
+    margin-bottom: 30px;
+  }
+  .bookingMiddleSection button {
+    padding: 17px 35px;
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 578px) and (max-width: 800px) {
+  .bookingMiddleSection {
+    margin: 50px auto 15px auto;
+    width: 90%;
+  }
+
+  .formDiv {
+    margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 801px) {
+  .bookingMiddleSection {
+    margin: 80px auto 15px auto;
+
+    width: 100%;
+    max-width: 720px;
+  }
+  .formDiv {
+    margin-bottom: 70px;
+  }
+}
+
+.formPageDiv .navBar {
+  position: static;
+}
+
+.bookingForm {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+
+  border: 3px solid #c59148;
+  box-shadow: 1px 1px 14px 9px #c59148;
+  background-color: #fffaf0;
+}
+
+.bookingForm input,
+.bookingForm select,
+.bookingForm h3 {
+  margin-bottom: 20px;
+}
+
+.bookingForm input,
+.bookingForm select {
+  margin-bottom: 20px;
+  margin-top: 5px;
+  padding-left: 20px;
+  width: 100%;
+  height: 35px;
+
+  background-color: rgba(197, 145, 72, 0.8);
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+.bookingForm input:hover,
+.bookingForm input:focus,
+.bookingForm select:hover,
+.bookingForm select:focus {
+  border: 3px solid #648b33;
+}
+
+.bookingForm input[type="submit"] {
+  align-self: center;
+  width: 80%;
+  height: 50px;
+  margin-top: 20px;
+  padding: 0;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+
+  font-weight: bold;
+  font-family: "Fredericka the Great", cursive;
+  font-size: 20px;
+  cursor: pointer;
+}
+@media screen and (max-width: 415px) {
+  .bookingForm input[type="submit"] {
+    font-size: 15px;
+  }
+}
+
+.formPageDiv .navTile {
+  display: none;
+}
+
+.formPageDiv .navName,
+.formPageDiv a {
+  cursor: default;
 }

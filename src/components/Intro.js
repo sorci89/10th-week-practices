@@ -3,7 +3,7 @@ import Picture2 from "./esterno1.jpg";
 
 function Intro() {
   return (
-    <div className="intro">
+    <div className="intro" id="Rólunk">
       <div className="introPicture">
         <img src={Picture1} alt="picture1" id="introPicture1"></img>
       </div>

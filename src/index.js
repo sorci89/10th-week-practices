@@ -6,8 +6,8 @@ import {Homepage, Bookingpage } from './App';
 ReactDOM.render(
     <Router>
        <Routes>
-		      <Route exact path="/" element={<Homepage/>}></Route>
-				  <Route exact path="/bookatable" element={<Bookingpage/>}></Route>
+		    <Route exact path="/" element={<Homepage/>}></Route>
+			<Route exact path="/bookatable" element={<Bookingpage/>}></Route>
 	    </Routes>
     </Router>,
     document.getElementById('root')
